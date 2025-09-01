@@ -1,9 +1,15 @@
-<a href="/"><- Back to the main page</a>
+{% extends 'base.html' %}
 
-<h2>Product: {{ product.name }}</h2>
-<h2>{{ product.summary }}</h2>
+{% block content %}
 
-<h3>Price: {{ product.price }}</h3>
-<h3>Quantity: {{ product.quantity }}</h3>
+    <a href="/"><- Back to the main page</a>
 
-<img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+    <h2>Product: {{ product.name }}</h2>
+    <h2>{{ product.summary }}</h2>
+
+    <h3>Price: ${{ product.price }}</h3>
+    <h3>Quantity: {{ product.quantity }}pc</h3>
+
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+
+{% endblock %}
