@@ -5,7 +5,8 @@ from shop.models import Product, Review
 # Create your views here.
 def product(request, slug):
     product = get_object_or_404(Product, slug=slug)
-    return render(request, 'product.html', {'product': product})
+    reviews = Review.objects.filter(product__slug=product.slug)
+    return render(request, 'product.html', {'product': product, 'reviews': reviews})
 
 def index(request):
     products = Product.objects.all()
