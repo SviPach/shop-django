@@ -7,42 +7,31 @@
 
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center my-4">
-                        <div class="card" style="width: 40rem; background-color: rgb(242,255,242)">
-                            <div class="card-body">
-                                <h5 class="card-title">Name Surname</h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary">Rating:
-                                    {% for i in "★★★★"|slice:":product.rating"|make_list %}
-                                    <span style="color: gold;">&#9733;</span>
-                                    {% endfor %}
-                                    {% for i in "★"|slice:"product.rating:"|make_list %}
-                                        <span style="color: gray;">&#9733;</span>
-                                    {% endfor %}
-                                </h6>
-                                <p class="card-text">Some buyer's comment about an order.</p>
+                {% for review in reviews %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="d-flex justify-content-center my-4">
+                            <div class="card" style="width: 40rem; background-color: rgb(242,255,242)">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
+                                        <a href="/product/{{ review.product.slug }}" style="text-decoration: none;">
+                                            <span class="text-body-secondary">- {{ review.product.name }}</span>
+                                        </a>
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Rating:
+                                        {% for i in review.stars_gold %}
+                                            <span style="color: gold;">&#9733;</span>
+                                        {% endfor %}
+                                        {% for i in review.stars_gray %}
+                                            <span style="color: gray;">&#9733;</span>
+                                        {% endfor %}
+                                    </h6>
+                                    <p class="card-text">{{ review.comment }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center my-4">
-                        <div class="card" style="width: 40rem; background-color: rgb(242,255,242)">
-                            <div class="card-body">
-                                <h5 class="card-title">Name Surname</h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary">Rating:
-                                    {% for i in "★★★★"|slice:":product.rating"|make_list %}
-                                    <span style="color: gold;">&#9733;</span>
-                                    {% endfor %}
-                                    {% for i in "★"|slice:"product.rating:"|make_list %}
-                                        <span style="color: gray;">&#9733;</span>
-                                    {% endfor %}
-                                </h6>
-                                <p class="card-text">Some buyer's comment about an order.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                     data-bs-slide="prev" style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; width: 40px; height: 40px; left: 250px; top: 50%; transform: translateY(-50%); filter: invert(1);">

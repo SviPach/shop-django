@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from shop.models import Product
+from shop.models import Product, Review
 
 
 # Create your views here.
@@ -9,4 +9,5 @@ def product(request, slug):
 
 def index(request):
     products = Product.objects.all()
-    return render(request, 'index.html', {'products': products})
+    reviews = Review.objects.all()
+    return render(request, 'index.html', {'products': products, 'reviews': reviews})
