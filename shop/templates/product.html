@@ -2,14 +2,23 @@
 
 {% block content %}
 
-    <a href="/"><- Back to the main page</a>
 
-    <h2>Product: {{ product.name }}</h2>
-    <h2>{{ product.summary }}</h2>
+    <div class="container my-4">
+        <div class="card mx-auto" style="width: 30rem;">
+            <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.summary }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Price: ${{ product.price }}</li>
+                <li class="list-group-item">Quantity: {{ product.quantity }}pc</li>
+            </ul>
+            <div class="card-body">
+                <a href="/" class="btn btn-primary">Add to cart</a>
+            </div>
+        </div>
+    </div>
 
-    <h3>Price: ${{ product.price }}</h3>
-    <h3>Quantity: {{ product.quantity }}pc</h3>
-
-    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
 
 {% endblock %}
