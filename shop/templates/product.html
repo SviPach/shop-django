@@ -3,20 +3,18 @@
 {% block content %}
 
 
-    <div class="container my-4">
-        <div class="card mx-auto" style="width: 30rem;">
-            <img src="{{ product.image.url }}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text">{{ product.summary }}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Price: ${{ product.price }}</li>
-                <li class="list-group-item">Quantity: {{ product.quantity }}pc</li>
-            </ul>
-            <div class="card-body">
-                <a href="/" class="btn btn-primary">Add to cart</a>
-            </div>
+    <div class="card mx-auto" style="width: 30rem;">
+        <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.summary }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price: ${{ product.price }}</li>
+            <li class="list-group-item">Quantity: {{ product.quantity }}pc</li>
+        </ul>
+        <div class="card-body">
+            <a href="/" class="btn btn-primary">Add to cart</a>
         </div>
     </div>
 

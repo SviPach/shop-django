@@ -3,68 +3,69 @@
 
 {% block content %}
 
-    <div class="container my-4">
 
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                {% for review in reviews %}
-                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <div class="d-flex justify-content-center my-4">
-                            <div class="card" style="width: 40rem; background-color: rgb(242,255,242)">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
-                                        <a href="/product/{{ review.product.slug }}" style="text-decoration: none;">
-                                            <span class="text-body-secondary">- {{ review.product.name }}</span>
-                                        </a>
-                                    </h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Rating:
-                                        {% for i in review.stars_gold %}
-                                            <span style="color: gold;">&#9733;</span>
-                                        {% endfor %}
-                                        {% for i in review.stars_gray %}
-                                            <span style="color: gray;">&#9733;</span>
-                                        {% endfor %}
-                                    </h6>
-                                    <p class="card-text">{{ review.comment }}</p>
-                                </div>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for review in reviews %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="d-flex justify-content-center my-4">
+                        <div class="card" style="width: 40rem; background-color: rgb(242,255,242)">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
+                                    <a href="/product/{{ review.product.slug }}" style="text-decoration: none;">
+                                        <span class="text-body-secondary">- {{ review.product.name }}</span>
+                                    </a>
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Rating:
+                                    {% for i in review.stars_gold %}
+                                        <span style="color: gold;">&#9733;</span>
+                                    {% endfor %}
+                                    {% for i in review.stars_gray %}
+                                        <span style="color: gray;">&#9733;</span>
+                                    {% endfor %}
+                                </h6>
+                                <p class="card-text">{{ review.comment }}</p>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="prev" style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; width: 40px; height: 40px; left: 250px; top: 50%; transform: translateY(-50%); filter: invert(1);">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next btn-custom" type="button" data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="next" style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; width: 40px; height: 40px; right: 250px; top: 50%; transform: translateY(-50%); filter: invert(1);">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            {% for product in products %}
-                <div class="col">
-                    <a href="/product/{{ product.slug }}" style="text-decoration: none;">
-                        <div class="card">
-
-                            <img src="{{ product.image.url }}" class="card-img-top img-fluid"
-                                 style="max-width: 400px; max-height: 250px; object-fit: cover;" alt="...">
-
-                            <div class="card-body">
-                                <h5 class="card-title">{{ product.name }}</h5>
-                                <p class="card-text">{{ product.summary }}</p>
-                            </div>
-                        </div>
-                    </a>
                 </div>
             {% endfor %}
         </div>
-
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev"
+                style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; width: 40px; height: 40px; left: 250px; top: 50%; transform: translateY(-50%); filter: invert(1);">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-custom" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next"
+                style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; width: 40px; height: 40px; right: 250px; top: 50%; transform: translateY(-50%); filter: invert(1);">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
+
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+
+        {% for product in products %}
+            <div class="col">
+                <a href="/product/{{ product.slug }}" style="text-decoration: none;">
+                    <div class="card">
+
+                        <img src="{{ product.image.url }}" class="card-img-top img-fluid"
+                             style="max-width: 400px; max-height: 250px; object-fit: cover;" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.summary }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
 
 {% endblock %}
