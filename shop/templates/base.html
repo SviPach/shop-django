@@ -16,34 +16,39 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #cf7d2c;">
-        <div class="container-fluid">
-            <a class="navbar-brand">Welcome to the DjangoShop!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/" style="color: white;">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/" style="color: white;">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/" style="color: white;">Pricing</a>
-                    </li>
-                </ul>
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #cf7d2c;">
+    <div class="container-fluid">
+        <a class="navbar-brand">Welcome to the DjangoShop!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/" style="color: white;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" style="color: white;">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" style="color: white;">Pricing</a>
+                </li>
+            </ul>
 
-                <span class="navbar-text" style="color: white;">
+            <span class="navbar-text" style="color: white; margin-right: 20px">
                     We are glad to see you here!
-                </span>
-            </div>
+            </span>
+
+            <button type="button" class="btn btn-primary position-relative" style="color: white; background-color: rgb(151,76,6); border-color: white;">
+                <a class="nav-link" href="/" style="color: white;">Profile</a>
+            </button>
         </div>
-    </nav>
+    </div>
+</nav>
 
 
-    <div class="fixed-sidebar" style="
+<div class="fixed-sidebar" style="
     position: fixed;
     top: 100px;
     left: 0;
@@ -55,27 +60,32 @@
     padding: 1rem;
     z-index: 1030;
 ">
-        <h5 style="color: black">Our catalog:</h5>
-        <div class="list-group">
-            <a href="/category/fruits" class="list-group-item list-group-item-action" style="background-color: #cf7d2c; color: white">
-                Fruits
-            </a>
-            <a href="/category/vegetables" class="list-group-item list-group-item-action" style="background-color: #cf7d2c; color: white">
-                Vegetables
-            </a>
-            <a href="/category/dairy_eggs" class="list-group-item list-group-item-action" style="background-color: #cf7d2c; color: white">
-                Dairy & Eggs
-            </a>
-            <a href="/category/meat_fish" class="list-group-item list-group-item-action" style="background-color: #cf7d2c; color: white">
-                Meat and Fish
-            </a>
-            <a href="/category/exotic" class="list-group-item list-group-item-action" style="background-color: #cf7d2c; color: white">
-                Exotic
-            </a>
-        </div>
+    <h5 style="color: black;">Our catalog:</h5>
+    <div class="list-group">
+        <a href="/category/fruits" class="list-group-item list-group-item-action"
+           style="background-color: #cf7d2c; color: white">
+            Fruits
+        </a>
+        <a href="/category/vegetables" class="list-group-item list-group-item-action"
+           style="background-color: #cf7d2c; color: white">
+            Vegetables
+        </a>
+        <a href="/category/dairy_eggs" class="list-group-item list-group-item-action"
+           style="background-color: #cf7d2c; color: white">
+            Dairy & Eggs
+        </a>
+        <a href="/category/meat_fish" class="list-group-item list-group-item-action"
+           style="background-color: #cf7d2c; color: white">
+            Meat and Fish
+        </a>
+        <a href="/category/exotic" class="list-group-item list-group-item-action"
+           style="background-color: #cf7d2c; color: white">
+            Exotic
+        </a>
     </div>
+</div>
 
-    <a href="/" style="
+<a href="/" style="
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -92,20 +102,19 @@
     z-index: 1000;
     transition: background-color 0.3s;
 "
-       onmouseover="this.style.backgroundColor='rgba(207,125,44,0.8)'"
-       onmouseout="this.style.backgroundColor='rgba(207,125,44,0.4)'">
-        <i class="bi bi-basket2-fill"></i>
-    </a>
+   onmouseover="this.style.backgroundColor='rgba(207,125,44,0.8)'"
+   onmouseout="this.style.backgroundColor='rgba(207,125,44,0.4)'">
+    <i class="bi bi-basket2-fill"></i>
+</a>
 
 
-
-    <div>
-        <div class="container my-5">
-            {% block content %}
-                This is a fallback text.
-            {% endblock %}
-        </div>
+<div>
+    <div class="container my-5">
+        {% block content %}
+            This is a fallback text.
+        {% endblock %}
     </div>
+</div>
 
 </body>
 </html>
