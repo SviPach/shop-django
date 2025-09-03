@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div style="padding-top: 3rem;">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+
+            {% for product in products %}
+                <div class="col">
+                    <a href="/product/{{ product.slug }}" style="text-decoration: none;">
+                        <div class="card" style="background-color: #cf7d2c">
+
+                            <img src="{{ product.image.url }}" class="card-img-top img-fluid"
+                                 style="max-width: 400px; max-height: 250px; object-fit: cover;" alt="...">
+
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: black">{{ product.name }}</h5>
+                                <p class="card-text" style="color: white">{{ product.summary }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}
