@@ -9,15 +9,15 @@
             {% for review in reviews %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <div class="d-flex justify-content-center my-4">
-                        <div class="card" style="width: 40rem; background-color: rgb(242,255,242)">
+                        <div class="card" style="width: 40rem; background-color: rgb(151,76,6)">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
                                     <a href="/product/{{ review.product.slug }}" style="text-decoration: none;">
-                                        <span class="text-body-secondary">- {{ review.product.name }}</span>
+                                        <span style="color: white">- {{ review.product.name }}</span>
                                     </a>
                                 </h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary">Rating:
+                                <h6 class="card-subtitle mb-2" style="color: white">Rating:
                                     {% for i in review.stars_gold %}
                                         <span style="color: gold;">&#9733;</span>
                                     {% endfor %}
@@ -25,7 +25,7 @@
                                         <span style="color: gray;">&#9733;</span>
                                     {% endfor %}
                                 </h6>
-                                <p class="card-text">{{ review.comment }}</p>
+                                <p class="card-text" style="color: black">{{ review.comment }}</p>
                             </div>
                         </div>
                     </div>
@@ -52,14 +52,14 @@
         {% for product in products %}
             <div class="col">
                 <a href="/product/{{ product.slug }}" style="text-decoration: none;">
-                    <div class="card">
+                    <div class="card" style="background-color: #cf7d2c">
 
                         <img src="{{ product.image.url }}" class="card-img-top img-fluid"
                              style="max-width: 400px; max-height: 250px; object-fit: cover;" alt="...">
 
                         <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text">{{ product.summary }}</p>
+                            <h5 class="card-title" style="color: black">{{ product.name }}</h5>
+                            <p class="card-text" style="color: white">{{ product.summary }}</p>
                         </div>
                     </div>
                 </a>

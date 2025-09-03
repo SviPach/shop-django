@@ -3,18 +3,21 @@
 {% block content %}
 
     <!-- Product -->
-    <div class="card mx-auto" style="width: 500px; top: 50px;">
+    <div class="card mx-auto" style="width: 500px; top: 50px; background-color: rgb(151,76,6);">
         <img src="{{ product.image.url }}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.summary }}</p>
+            <h5 class="card-title" style="color: black">{{ product.name }}</h5>
+            <p class="card-text" style="color: white">{{ product.summary }}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Price: ${{ product.price }}</li>
-            <li class="list-group-item">Quantity: {{ product.quantity }}pc</li>
+            <li class="list-group-item" style="background-color: #cf7d2c; border-color: rgb(151,76,6); color: white;">
+                Price: ${{ product.price }}</li>
+            <li class="list-group-item" style="background-color: #cf7d2c; border: none; color: white;">
+                Quantity: {{ product.quantity }}pc
+            </li>
         </ul>
         <div class="card-body">
-            <a href="/" class="btn btn-primary">Add to cart</a>
+            <a href="/" class="btn btn-primary" style="background-color: #cf7d2c; border-color: white">Add to cart</a>
         </div>
     </div>
 
@@ -23,15 +26,15 @@
     <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
         {% for review in reviews %}
             <div class="col">
-                <div class="card h-100" style="background-color: rgb(242,255,242);">
+                <div class="card h-100" style="background-color: rgb(151,76,6);">
                     <div class="card-body">
                         <h5 class="card-title">
                             <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
                             <a href="/product/{{ review.product.slug }}" style="text-decoration: none;">
-                                <span class="text-body-secondary">- {{ review.product.name }}</span>
+                                <span style="color: white">- {{ review.product.name }}</span>
                             </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Rating:
+                        <h6 class="card-subtitle mb-2" style="color: white">Rating:
                             {% for i in review.stars_gold %}
                                 <span style="color: gold;">&#9733;</span>
                             {% endfor %}
@@ -39,7 +42,7 @@
                                 <span style="color: gray;">&#9733;</span>
                             {% endfor %}
                         </h6>
-                        <p class="card-text">{{ review.comment }}</p>
+                        <p class="card-text" style="color: black">{{ review.comment }}</p>
                     </div>
                 </div>
             </div>
