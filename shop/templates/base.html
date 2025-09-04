@@ -18,7 +18,7 @@
 
 
 <!-- Top navigation panel -->
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(151,76,6);">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand">Welcome to the DjangoShop!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -28,29 +28,17 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/"
-                       style="color: white; border-radius: 4px"
-                       onmouseover="this.style.backgroundColor='rgba(207,125,44,0.6)'"
-                       onmouseout="this.style.backgroundColor='rgba(207,125,44,0)'"
-                    >
+                    <a class="nav-link" aria-current="page" href="/">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/"
-                       style="color: white; border-radius: 4px"
-                       onmouseover="this.style.backgroundColor='rgba(207,125,44,0.6)'"
-                       onmouseout="this.style.backgroundColor='rgba(207,125,44,0)'"
-                    >
+                    <a class="nav-link" href="/">
                         Pricing
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/"
-                       style="color: white; border-radius: 4px"
-                       onmouseover="this.style.backgroundColor='rgba(207,125,44,0.6)'"
-                       onmouseout="this.style.backgroundColor='rgba(207,125,44,0)'"
-                    >
+                    <a class="nav-link" href="/">
                         About us
                     </a>
                 </li>
@@ -60,16 +48,9 @@
                         We are glad to see you here!
                 </span>
 
-            <button type="button"
-                    class="btn btn-primary position-relative"
-                    style="
-                        background-color: rgba(207,125,44,1);
-                        border-color: white;"
-                    onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
-                    onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
-            >
-                <a class="nav-link" href="/" style="color: white;">Profile</a>
-            </button>
+            <a href="/" class="btn btn-primary position-relative">
+                Profile
+            </a>
         </div>
     </div>
 </nav>
@@ -77,12 +58,10 @@
 
 <!-- Category sidebar -->
 <div class="fixed-sidebar" style="
-        position: fixed;
         top: 100px;
         left: 0;
         width: 165px;
         height: 31%;
-        background-color: rgb(151,76,6);
         border-radius: 0 10px 10px 0;
         overflow-y: auto;
         padding: 1rem;
@@ -90,39 +69,19 @@
     ">
     <h5 style="color: black;">Our catalog:</h5>
     <div class="list-group">
-        <a href="/category/fruits" class="list-group-item list-group-item-action"
-           style="background-color: rgba(207,125,44,1); color: white"
-           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
-           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
-        >
+        <a href="/category/fruits" class="list-group-item">
             Fruits
         </a>
-        <a href="/category/vegetables" class="list-group-item list-group-item-action"
-           style="background-color: rgba(207,125,44,1); color: white"
-           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
-           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
-        >
+        <a href="/category/vegetables" class="list-group-item">
             Vegetables
         </a>
-        <a href="/category/dairy-eggs" class="list-group-item list-group-item-action"
-           style="background-color: rgba(207,125,44,1); color: white"
-           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
-           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
-        >
+        <a href="/category/dairy-eggs" class="list-group-item">
             Dairy & Eggs
         </a>
-        <a href="/category/meat-fish" class="list-group-item list-group-item-action"
-           style="background-color: rgba(207,125,44,1); color: white"
-           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
-           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
-        >
+        <a href="/category/meat-fish" class="list-group-item">
             Meat and Fish
         </a>
-        <a href="/category/exotic" class="list-group-item list-group-item-action"
-           style="background-color: rgba(207,125,44,1); color: white"
-           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
-           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
-        >
+        <a href="/category/exotic" class="list-group-item">
             Exotic
         </a>
     </div>
@@ -130,25 +89,7 @@
 
 
 <!-- Shopping cart button -->
-<a href="/" style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 70px;
-        height: 70px;
-        background-color: rgba(151,76,6,0.4);
-        border-radius: 50%;
-        color: white;
-        font-size: 2rem;
-        text-decoration: none;
-        z-index: 1000;
-        transition: background-color 0.3s;
-    "
-   onmouseover="this.style.backgroundColor='rgba(151,76,6,0.8)'"
-   onmouseout="this.style.backgroundColor='rgba(151,76,6,0.4)'">
+<a class="shopping-cart-button" href="/">
     <i class="bi bi-basket2-fill"></i>
 </a>
 

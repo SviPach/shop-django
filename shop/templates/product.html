@@ -7,7 +7,7 @@
 
 
         <!-- Product -->
-        <div class="card mx-auto" style="width: 500px; background-color: rgb(151,76,6); overflow: hidden;">
+        <div class="card card-product-overview mx-auto">
             <!-- Image carousel -->
             <div id="carouselProduct{{ product.id }}" class="carousel slide">
                 <div class="carousel-inner" style="height: 320px;">
@@ -37,22 +37,17 @@
                 <p class="card-text" style="color: white">{{ product.summary }}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item" style="background-color: #cf7d2c; border-color: rgb(151,76,6);">
+                <li class="list-group-item list-group-item-static">
                     <span style="color: black;">Price: </span>
                     <span style="color: white;">${{ product.price }}</span>
                 </li>
-                <li class="list-group-item" style="background-color: #cf7d2c; border: none;">
+                <li class="list-group-item list-group-item-static">
                     <span style="color: black;">Quantity: </span>
                     <span style="color: white;">{{ product.quantity }}pc</span>
                 </li>
             </ul>
             <div class="card-body">
-                <a href="/" class="btn btn-primary"
-                   style="
-                   background-color: rgba(207,125,44,1); border-color: white"
-                   onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
-                   onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
-                >
+                <a href="/" class="btn btn-primary">
                     Add to cart
                 </a>
             </div>
