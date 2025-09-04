@@ -16,7 +16,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #cf7d2c;">
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(151,76,6);">
     <div class="container-fluid">
         <a class="navbar-brand">Welcome to the DjangoShop!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -26,13 +26,31 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/" style="color: white;">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/"
+                       style="color: white; border-radius: 4px"
+                       onmouseover="this.style.backgroundColor='rgba(207,125,44,0.6)'"
+                       onmouseout="this.style.backgroundColor='rgba(207,125,44,0)'"
+                    >
+                        Home
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/" style="color: white;">Features</a>
+                    <a class="nav-link" href="/"
+                       style="color: white; border-radius: 4px"
+                       onmouseover="this.style.backgroundColor='rgba(207,125,44,0.6)'"
+                       onmouseout="this.style.backgroundColor='rgba(207,125,44,0)'"
+                    >
+                        Pricing
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/" style="color: white;">Pricing</a>
+                    <a class="nav-link" href="/"
+                       style="color: white; border-radius: 4px"
+                       onmouseover="this.style.backgroundColor='rgba(207,125,44,0.6)'"
+                       onmouseout="this.style.backgroundColor='rgba(207,125,44,0)'"
+                    >
+                        About us
+                    </a>
                 </li>
             </ul>
 
@@ -40,7 +58,14 @@
                     We are glad to see you here!
             </span>
 
-            <button type="button" class="btn btn-primary position-relative" style="color: white; background-color: rgb(151,76,6); border-color: white;">
+            <button type="button"
+                    class="btn btn-primary position-relative"
+                    style="color: white;
+                    background-color: rgba(207,125,44,1);
+                    border-color: white;"
+                    onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
+                    onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
+            >
                 <a class="nav-link" href="/" style="color: white;">Profile</a>
             </button>
         </div>
@@ -63,23 +88,38 @@
     <h5 style="color: black;">Our catalog:</h5>
     <div class="list-group">
         <a href="/category/fruits" class="list-group-item list-group-item-action"
-           style="background-color: #cf7d2c; color: white">
+           style="background-color: rgba(207,125,44,1); color: white"
+           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
+           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
+        >
             Fruits
         </a>
         <a href="/category/vegetables" class="list-group-item list-group-item-action"
-           style="background-color: #cf7d2c; color: white">
+           style="background-color: rgba(207,125,44,1); color: white"
+           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
+           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
+        >
             Vegetables
         </a>
         <a href="/category/dairy_eggs" class="list-group-item list-group-item-action"
-           style="background-color: #cf7d2c; color: white">
+           style="background-color: rgba(207,125,44,1); color: white"
+           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
+           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
+        >
             Dairy & Eggs
         </a>
         <a href="/category/meat_fish" class="list-group-item list-group-item-action"
-           style="background-color: #cf7d2c; color: white">
+           style="background-color: rgba(207,125,44,1); color: white"
+           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
+           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
+        >
             Meat and Fish
         </a>
         <a href="/category/exotic" class="list-group-item list-group-item-action"
-           style="background-color: #cf7d2c; color: white">
+           style="background-color: rgba(207,125,44,1); color: white"
+           onmouseover="this.style.backgroundColor='rgba(207,125,44,0.7)'"
+           onmouseout="this.style.backgroundColor='rgba(207,125,44,1)'"
+        >
             Exotic
         </a>
     </div>
@@ -94,7 +134,7 @@
     justify-content: center;
     width: 70px;
     height: 70px;
-    background-color: rgba(207,125,44,0.4);
+    background-color: rgba(151,76,6,0.4);
     border-radius: 50%;
     color: white;
     font-size: 2rem;
@@ -102,8 +142,8 @@
     z-index: 1000;
     transition: background-color 0.3s;
 "
-   onmouseover="this.style.backgroundColor='rgba(207,125,44,0.8)'"
-   onmouseout="this.style.backgroundColor='rgba(207,125,44,0.4)'">
+   onmouseover="this.style.backgroundColor='rgba(151,76,6,0.8)'"
+   onmouseout="this.style.backgroundColor='rgba(151,76,6,0.4)'">
     <i class="bi bi-basket2-fill"></i>
 </a>
 
