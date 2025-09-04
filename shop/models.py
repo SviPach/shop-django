@@ -11,6 +11,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Product(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
@@ -18,7 +19,6 @@ class Product(models.Model):
     price = models.FloatField()
     quantity = models.IntegerField()
     summary = models.CharField(max_length=300)
-    image = models.ImageField(upload_to='images', default='empty.png')
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -29,6 +29,7 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[self.slug])
+
 
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
@@ -44,3 +45,15 @@ class Review(models.Model):
     @property
     def stars_gray(self):
         return range(5 - self.rating)
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(
+        Product,
+        related_name='images',
+        on_delete=models.CASCADE
+    )
+    image = models.ImageField(upload_to='images', default='empty.png')
+
+    def __str__(self):
+        return f"Image for {self.product.name}"

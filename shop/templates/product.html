@@ -6,7 +6,7 @@
     <div style="padding-top: 3rem;">
         <!-- Product -->
         <div class="card mx-auto" style="width: 500px; background-color: rgb(151,76,6);">
-            <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+            <img src="{{ product.images.first.image.url }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title" style="color: black">{{ product.name }}</h5>
                 <p class="card-text" style="color: white">{{ product.summary }}</p>
