@@ -56,4 +56,8 @@ class ProductImage(models.Model):
     image = models.ImageField(upload_to='images', default='empty.png')
 
     def __str__(self):
-        return f"Image for {self.product.name} - {self.image.url.split('/')[-1]}"
+        filename = self.image.url.split('/')[-1]
+        return f"{self.product.name} - {filename}"
+
+    class Meta:
+        ordering = ['product__name']
