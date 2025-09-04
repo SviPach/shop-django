@@ -7,10 +7,33 @@
 
 
         <!-- Product -->
-        <div class="card mx-auto" style="width: 500px; background-color: rgb(151,76,6);">
-            <img src="{{ product.images.first.image.url }}" class="card-img-top" alt="...">
+        <div class="card mx-auto" style="width: 500px; background-color: rgb(151,76,6); overflow: hidden;">
+            <!-- Image carousel -->
+            <div id="carouselProduct{{ product.id }}" class="carousel slide">
+                <div class="carousel-inner" style="height: 320px;">
+                    {% for image in product.images.all %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <img src="{{ image.image.url }}" class="d-block w-100 h-100 round-top" alt="{{ product.name }}">
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Carousel navigation buttons -->
+                {% if product.images.count > 1 %}
+                    <button class="carousel-control-prev" type="button"
+                            data-bs-target="#carouselProduct{{ product.id }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselProduct{{ product.id }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                {% endif %}
+            </div>
+
+            <!-- Product's info -->
             <div class="card-body">
-                <h5 class="card-title" style="color: black">{{ product.name }}</h5>
+                <h5 class="card-title" style="color: black; margin-top: -5px">{{ product.name }}</h5>
                 <p class="card-text" style="color: white">{{ product.summary }}</p>
             </div>
             <ul class="list-group list-group-flush">
@@ -45,7 +68,8 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
-                                <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}" style="text-decoration: none;">
+                                <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}"
+                                   style="text-decoration: none;">
                                     <span style="color: white">- {{ review.product.name }}</span>
                                 </a>
                             </h5>

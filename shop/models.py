@@ -56,4 +56,4 @@ class ProductImage(models.Model):
     image = models.ImageField(upload_to='images', default='empty.png')
 
     def __str__(self):
-        return f"Image for {self.product.name}"
+        return f"Image for {self.product.name} - {self.image.url.split('/')[-1]}"
