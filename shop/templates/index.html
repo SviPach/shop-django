@@ -66,7 +66,7 @@
         {% for product in products %}
             <div class="col">
                 <a href="/product/{{ product.slug }}" style="text-decoration: none;">
-                    <div class="card"
+                    <div class="card product-card"
                          style="
                          background-color: rgba(207,125,44,0.7)"
                          onmouseover="this.style.backgroundColor='rgba(207,125,44,1)'"
@@ -79,6 +79,18 @@
                         <div class="card-body">
                             <h5 class="card-title" style="color: black">{{ product.name }}</h5>
                             <p class="card-text" style="color: white">{{ product.summary }}</p>
+                        </div>
+
+                        <div class="extra-info">
+                            <p class="text-white" style="margin-left: 15px">
+                                <span style="color: black">Price: </span>
+                                <span>${{ product.price|truncatechars:100 }}</span>
+                            </p>
+                            <p class="text-white" style="margin-left: 15px">
+                                <span style="color: black">Quantity: </span>
+                                <span>{{ product.quantity|truncatechars:100 }}pc</span>
+                            </p>
+{#                            <img src="{{ product.extra_image.url }}" class="img-fluid rounded" alt="доп. картинка">#}
                         </div>
                     </div>
                 </a>
