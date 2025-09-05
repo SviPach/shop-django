@@ -6,6 +6,7 @@
 
     <!-- Reviews -->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
         <div class="carousel-inner">
             {% for review in reviews %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
@@ -39,6 +40,7 @@
         <button class="carousel-control-next carousel-control-custom" data-bs-target="#carouselExampleAutoplaying" style="right: 250px;" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
+
     </div>
 
 
@@ -72,6 +74,7 @@
                 </a>
             </div>
         {% endfor %}
+
     </div>
 
 

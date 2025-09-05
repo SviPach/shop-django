@@ -21,3 +21,6 @@ def category(request, category_slug):
     category = Category.objects.get(slug=category_slug)
     products = Product.objects.filter(category=category)
     return render(request, 'category.html', {'products': products})
+
+def about(request):
+    return render(request, 'about.html')
