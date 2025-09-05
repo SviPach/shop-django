@@ -89,7 +89,8 @@
     </div>
 
     <div class="d-flex justify-content-center" style="margin-bottom: -8px;">
-        <button id="sidebarHide" class="btn btn-primary btn-sm justify-content-center" style="width: 50px; height: 30px; margin-top: 5px">
+        <button id="sidebarHide" class="btn btn-primary btn-sm justify-content-center"
+                style="width: 50px; height: 30px; margin-top: 5px">
             <i class="bi bi-chevron-double-left"></i>
         </button>
     </div>
@@ -110,8 +111,8 @@
 
 
 <!-- Content -->
-<div>
-    <div class="container my-5">
+<div style="min-height: 100%; display: flex; flex-direction: column;">
+    <div class="container my-5" style="flex: 1;">
         {% block content %}
             This is a fallback text.
         {% endblock %}
@@ -119,30 +120,31 @@
 </div>
 
 
+<!-- Footer -->
 <footer class="footer">
-  <div class="container">
-    <p class="mb-1">© 2025 MyCompany. All rights reserved.</p>
-    <p class="mb-0">
-      In case of issues, contact:
-      <a href="mailto:support@mycompany.com">
+    <div class="container">
+        <p class="mb-1">© 2025 MyCompany. All rights reserved.</p>
+        <p class="mb-0">
+            In case of issues, contact:
+            <a href="mailto:support@mycompany.com">
           <span>
               support@mycompany.com
           </span>
-      </a>
-    </p>
-    <div class="mt-2">
-      <a href="/privacy/">
+            </a>
+        </p>
+        <div class="mt-2">
+            <a href="/privacy/">
           <span>
               Privacy Policy
           </span>
-      </a>
-      <a href="/terms/">
+            </a>
+            <a href="/terms/">
           <span>
               Terms of Service
           </span>
-      </a>
+            </a>
+        </div>
     </div>
-  </div>
 </footer>
 
 
