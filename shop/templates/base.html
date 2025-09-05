@@ -45,8 +45,8 @@
             </ul>
 
             <span class="navbar-text" style="color: white; margin-right: 20px">
-                        We are glad to see you here!
-                </span>
+                We are glad to see you here!
+            </span>
 
             <a href="/" class="btn btn-primary position-relative">
                 Profile
@@ -57,11 +57,11 @@
 
 
 <!-- Category sidebar -->
-<div class="fixed-sidebar" style="
-        top: 100px;
+<div id="sidebar" class="fixed-sidebar" style="
+        top: 30%;
         left: 0;
         width: 165px;
-        height: 31%;
+        height: auto;
         border-radius: 0 10px 10px 0;
         overflow-y: auto;
         padding: 1rem;
@@ -85,13 +85,26 @@
             Exotic
         </a>
     </div>
+
+    <div id="sidebarHide" class="d-flex justify-content-center" style="margin-bottom: -8px;">
+        <a class="btn btn-primary btn-sm justify-content-center" style="width: 50px; height: 30px; margin-top: 5px">
+            <i class="bi bi-chevron-double-left"></i>
+        </a>
+    </div>
+
 </div>
 
 
+<!-- Category sidebar button -->
+<button id="sidebarShow" class="btn btn-sidebar-show">
+    <i class="bi bi-chevron-double-right"></i>
+</button>
+
+
 <!-- Shopping cart button -->
-<a class="shopping-cart-button" href="/">
+<button class="btn shopping-cart-button">
     <i class="bi bi-basket2-fill"></i>
-</a>
+</button>
 
 
 <!-- Content -->
@@ -102,6 +115,9 @@
         {% endblock %}
     </div>
 </div>
+
+
+<script src="{% static 'js/main.js' %}"></script>
 
 
 </body>

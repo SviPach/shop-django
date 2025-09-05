@@ -62,11 +62,20 @@ body {
 .btn {
     background-color: rgba(var(--color-secondary), 1);
     border-color: white;
+    box-shadow: none;
 }
 
 .btn:hover {
     background-color: rgba(var(--color-secondary), 0.7);
     border-color: white;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(var(--color-primary), 1) !important;
+    border-color: white !important;
 }
 
 .fixed-sidebar {
@@ -96,7 +105,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 70px;
@@ -104,14 +113,38 @@ body {
     background-color: rgba(var(--color-primary), 0.4);
     border-radius: 50%;
     color: white;
-    font-size: 2rem;
+    font-size: 34px;
     text-decoration: none;
-    z-index: 1000;
     transition: background-color 0.3s;
+    border: none;
 }
 
 .shopping-cart-button:hover {
     background-color: rgba(var(--color-primary), 0.8);
+    color: white;
+}
+
+.btn-sidebar-show {
+    position: fixed;
+    top: 40%;
+    left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(var(--color-primary), 0.4);
+    border-radius: 50%;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.btn-sidebar-show:hover {
+    background-color: rgba(var(--color-primary), 0.8);
+    color: white;
 }
 
 .card-review {
@@ -129,4 +162,12 @@ body {
     height: 40px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.fixed-sidebar {
+    transition: transform 0.3s ease;
+}
+
+.fixed-sidebar.collapsed {
+    transform: translateX(-100%);
 }
