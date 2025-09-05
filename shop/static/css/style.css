@@ -22,7 +22,7 @@ body {
 }
 
 .card-product:hover {
-    background-color: rgba(var(--color-secondary), 1);
+    background-color: rgba(var(--color-secondary), 0.95);
     transform: scale(1.05);
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .card-product-overview {
-    background-color: rgb(var(--color-primary));
+    background-color: rgba(var(--color-primary), 0.95);
     width: 500px;
     overflow: hidden;
 }
@@ -42,6 +42,11 @@ body {
 .card-product:hover .extra-info {
     max-height: 400px;
     opacity: 1;
+}
+
+.card-info {
+    background-color: rgba(var(--color-primary), 0.85);
+    overflow: hidden;
 }
 
 .navbar{
