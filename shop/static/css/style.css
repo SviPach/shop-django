@@ -199,3 +199,27 @@ body {
     transform: translateX(-100%) scale(0.6);
     opacity: 0;
 }
+
+.footer {
+    background-color: rgba(var(--color-primary), 0.5);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer a span {
+    display: inline-block;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.footer a:hover span{
+    color: rgb(var(--color-secondary));
+    transform: scale(1.05);
+}
