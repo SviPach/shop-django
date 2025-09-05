@@ -52,22 +52,26 @@ body {
     color: white;
     border-radius: 4px;
     background-color: rgba(var(--color-secondary), 0);
+    transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 .nav-link:hover {
     color: white;
     background-color: rgba(var(--color-secondary), 0.6);
+    transform: scale(1.04);
 }
 
 .btn {
     background-color: rgba(var(--color-secondary), 1);
     border-color: white;
     box-shadow: none;
+    transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
 .btn:hover {
     background-color: rgba(var(--color-secondary), 0.7);
     border-color: white;
+    transform: scale(1.05);
 }
 
 .btn:focus,
@@ -78,14 +82,11 @@ body {
     border-color: white !important;
 }
 
-.fixed-sidebar {
-    background-color: rgb(var(--color-primary));
-    position: fixed;
-}
-
 .list-group-item {
+    overflow: visible;
     color: white;
     background-color: rgba(var(--color-secondary), 1);
+    transition: background-color 0.6s ease;
 }
 
 .list-group-item:hover {
@@ -95,10 +96,20 @@ body {
 .list-group-item-static {
     background-color: rgb(var(--color-secondary));
     border-color: rgb(var(--color-primary));
+
 }
 
 .list-group-item-static:hover {
     background-color: rgb(var(--color-secondary));
+}
+
+.list-group-item:not(.list-group-item-static) span {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.list-group-item:not(.list-group-item-static):hover span{
+    transform: scale(1.03);
 }
 
 .shopping-cart-button {
@@ -115,13 +126,14 @@ body {
     color: white;
     font-size: 34px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: transform 0.4s ease, background-color 0.4s ease;
     border: none;
 }
 
 .shopping-cart-button:hover {
     background-color: rgba(var(--color-primary), 0.8);
     color: white;
+    transform: scale(1.05);
 }
 
 .btn-sidebar-show {
@@ -138,13 +150,14 @@ body {
     color: white;
     font-size: 25px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: transform 0.4s ease, background-color 0.4s ease;
     border: none;
 }
 
 .btn-sidebar-show:hover {
     background-color: rgba(var(--color-primary), 0.8);
     color: white;
+    transform: scale(1.05);
 }
 
 .card-review {
@@ -162,12 +175,27 @@ body {
     height: 40px;
     top: 50%;
     transform: translateY(-50%);
+    transition: transform 0.4s ease;
+}
+
+.carousel-control-custom:hover {
+    transform: translateY(-50%) scale(1.05);
 }
 
 .fixed-sidebar {
-    transition: transform 0.3s ease;
+    background-color: rgb(var(--color-primary));
+    position: fixed;
+    transition: transform 0.4s ease, opacity 0.4s ease ;
+    opacity: 0.7;
+    transform-origin: left center;
+}
+
+.fixed-sidebar:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
 }
 
 .fixed-sidebar.collapsed {
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(0.6);
+    opacity: 0;
 }

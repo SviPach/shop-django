@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const sidebar = document.getElementById('sidebar');
+    const sidebarCatalog = document.getElementById('sidebarCatalog');
     const sidebarHide = document.getElementById('sidebarHide');
     const sidebarShow = document.getElementById('sidebarShow');
 
     sidebarHide.addEventListener('click', function() {
-        sidebar.classList.add('collapsed');
+        sidebarCatalog.classList.add('collapsed');
         sidebarShow.style.display = 'block';
     });
 
     sidebarShow.addEventListener('click', function() {
-        sidebar.classList.remove('collapsed');
+        sidebarCatalog.classList.remove('collapsed');
         sidebarShow.style.display = 'none';
     });
 });

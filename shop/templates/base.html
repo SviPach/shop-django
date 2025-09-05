@@ -57,10 +57,10 @@
 
 
 <!-- Category sidebar -->
-<div id="sidebar" class="fixed-sidebar" style="
+<div id="sidebarCatalog" class="fixed-sidebar" style="
         top: 30%;
         left: 0;
-        width: 165px;
+        width: auto;
         height: auto;
         border-radius: 0 10px 10px 0;
         overflow-y: auto;
@@ -70,33 +70,33 @@
     <h5 style="color: black;">Our catalog:</h5>
     <div class="list-group">
         <a href="/category/fruits" class="list-group-item">
-            Fruits
+            <span>Fruits</span>
         </a>
         <a href="/category/vegetables" class="list-group-item">
-            Vegetables
+            <span>Vegetables</span>
         </a>
         <a href="/category/dairy-eggs" class="list-group-item">
-            Dairy & Eggs
+            <span>Dairy & Eggs</span>
         </a>
         <a href="/category/meat-fish" class="list-group-item">
-            Meat and Fish
+            <span>Meat and Fish</span>
         </a>
         <a href="/category/exotic" class="list-group-item">
-            Exotic
+            <span>Exotic</span>
         </a>
     </div>
 
-    <div id="sidebarHide" class="d-flex justify-content-center" style="margin-bottom: -8px;">
-        <a class="btn btn-primary btn-sm justify-content-center" style="width: 50px; height: 30px; margin-top: 5px">
+    <div class="d-flex justify-content-center" style="margin-bottom: -8px;">
+        <button id="sidebarHide" class="btn btn-primary btn-sm justify-content-center" style="width: 50px; height: 30px; margin-top: 5px">
             <i class="bi bi-chevron-double-left"></i>
-        </a>
+        </button>
     </div>
 
 </div>
 
 
 <!-- Category sidebar button -->
-<button id="sidebarShow" class="btn btn-sidebar-show">
+<button id="sidebarShow" class="btn btn-sidebar-show" style="display: none;">
     <i class="bi bi-chevron-double-right"></i>
 </button>
 
