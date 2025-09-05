@@ -27,4 +27,5 @@ urlpatterns = [
     path('category/<slug:slug_category>/<slug:slug_product>/', shop_views.product),
     path('category/<slug:category_slug>/', shop_views.category),
     path('about/', shop_views.about),
+    path('privacy/', shop_views.privacy),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
