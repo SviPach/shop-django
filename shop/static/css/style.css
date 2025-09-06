@@ -54,7 +54,12 @@ body {
 }
 
 .navbar{
-    background-color: rgb(var(--color-primary));
+    background-color: rgba(var(--color-primary), 0.7);
+    transition: background-color 0.5s ease;
+}
+
+.navbar:hover {
+    background-color: rgba(var(--color-primary), 0.9);
 }
 
 .nav-link {
@@ -170,11 +175,7 @@ body {
 }
 
 .card-review {
-    background-color: rgb(var(--color-primary));
-}
-
-.card-review:hover {
-    background-color: rgb(var(--color-primary));
+    background-color: rgba(var(--color-primary), 0.9);
 }
 
 .carousel-control-custom {
@@ -215,6 +216,11 @@ body {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+    transition: background-color 0.6s ease;
+}
+
+.footer:hover {
+    background-color: rgba(var(--color-primary), 0.8);
 }
 
 .footer a {
