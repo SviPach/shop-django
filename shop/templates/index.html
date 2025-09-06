@@ -34,10 +34,12 @@
                 </div>
             {% endfor %}
         </div>
-        <button class="carousel-control-prev carousel-control-custom" data-bs-target="#carouselExampleAutoplaying" style="left: 250px;" data-bs-slide="prev">
+        <button class="carousel-control-prev carousel-control-custom" data-bs-target="#carouselExampleAutoplaying"
+                style="left: 250px;" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
-        <button class="carousel-control-next carousel-control-custom" data-bs-target="#carouselExampleAutoplaying" style="right: 250px;" data-bs-slide="next">
+        <button class="carousel-control-next carousel-control-custom" data-bs-target="#carouselExampleAutoplaying"
+                style="right: 250px;" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
 
@@ -49,27 +51,24 @@
 
         {% for product in products %}
             <div class="col">
-                <a href="category/{{ product.category.slug }}/{{ product.slug }}" style="text-decoration: none;">
-                    <div class="card card-product">
+                <a class="card card-product" href="category/{{ product.category.slug }}/{{ product.slug }}">
 
-                        <img src="{{ product.images.first.image.url }}" class="card-img-top img-fluid"
-                             style="max-width: 400px; max-height: 250px; object-fit: cover;" alt="...">
+                    <img src="{{ product.images.first.image.url }}" class="card-img-top img-fluid" alt="...">
 
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: black">{{ product.name }}</h5>
-                            <p class="card-text" style="color: white">{{ product.summary }}</p>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: black">{{ product.name }}</h5>
+                        <p class="card-text" style="color: white">{{ product.summary }}</p>
+                    </div>
 
-                        <div class="extra-info">
-                            <p class="text-white" style="margin-left: 15px">
-                                <span style="color: black">Price: </span>
-                                <span>${{ product.price|truncatechars:100 }}</span>
-                            </p>
-                            <p class="text-white" style="margin-left: 15px">
-                                <span style="color: black">Quantity: </span>
-                                <span>{{ product.quantity|truncatechars:100 }}pc</span>
-                            </p>
-                        </div>
+                    <div class="extra-info">
+                        <p>
+                            <span style="color: black">Price: </span>
+                            <span>${{ product.price|truncatechars:100 }}</span>
+                        </p>
+                        <p>
+                            <span style="color: black">Quantity: </span>
+                            <span>{{ product.quantity|truncatechars:100 }}pc</span>
+                        </p>
                     </div>
                 </a>
             </div>

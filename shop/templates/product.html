@@ -57,25 +57,23 @@
         <h1 class="display-3" style="color: white; margin-top: 100px;">Customers reviews:</h1>
         <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
             {% for review in reviews %}
-                <div class="col">
-                    <div class="card h-100" style="background-color: rgb(151,76,6);">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
-                                <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}">
-                                    <span class="review-product-link">- {{ review.product.name }}</span>
-                                </a>
-                            </h5>
-                            <h6 class="card-subtitle mb-2" style="color: white">Rating:
-                                {% for i in review.stars_gold %}
-                                    <span style="color: gold;">&#9733;</span>
-                                {% endfor %}
-                                {% for i in review.stars_gray %}
-                                    <span style="color: gray;">&#9733;</span>
-                                {% endfor %}
-                            </h6>
-                            <p class="card-text" style="color: black">{{ review.comment }}</p>
-                        </div>
+                <div class="card card-review-static col">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
+                            <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}">
+                                <span class="review-product-link">- {{ review.product.name }}</span>
+                            </a>
+                        </h5>
+                        <h6 class="card-subtitle mb-2" style="color: white">Rating:
+                            {% for i in review.stars_gold %}
+                                <span style="color: gold;">&#9733;</span>
+                            {% endfor %}
+                            {% for i in review.stars_gray %}
+                                <span style="color: gray;">&#9733;</span>
+                            {% endfor %}
+                        </h6>
+                        <p class="card-text" style="color: black">{{ review.comment }}</p>
                     </div>
                 </div>
             {% endfor %}

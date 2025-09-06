@@ -10,12 +10,10 @@
         <div class="row row-cols-1 row-cols-md-4 g-4">
 
             {% for product in products %}
-            <div class="col">
-                <a href="{{ product.slug }}" style="text-decoration: none;">
-                    <div class="card card-product">
+                <div class="col">
+                    <a class="card card-product" href="/category/{{ product.category.slug }}/{{ product.slug }}">
 
-                        <img src="{{ product.images.first.image.url }}" class="card-img-top img-fluid"
-                             style="max-width: 400px; max-height: 250px; object-fit: cover;" alt="...">
+                        <img src="{{ product.images.first.image.url }}" class="card-img-top img-fluid" alt="...">
 
                         <div class="card-body">
                             <h5 class="card-title" style="color: black">{{ product.name }}</h5>
@@ -23,19 +21,18 @@
                         </div>
 
                         <div class="extra-info">
-                            <p class="text-white" style="margin-left: 15px">
+                            <p>
                                 <span style="color: black">Price: </span>
                                 <span>${{ product.price|truncatechars:100 }}</span>
                             </p>
-                            <p class="text-white" style="margin-left: 15px">
+                            <p>
                                 <span style="color: black">Quantity: </span>
                                 <span>{{ product.quantity|truncatechars:100 }}pc</span>
                             </p>
                         </div>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
+                    </a>
+                </div>
+            {% endfor %}
 
         </div>
 
