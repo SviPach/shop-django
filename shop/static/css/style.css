@@ -208,18 +208,54 @@ body {
     background-color: rgba(var(--color-secondary), 0.7);
 }
 
-.carousel-control-custom {
+.carousel-control-prev-reviews,
+.carousel-control-next-reviews {
     background-color: rgb(var(--color-primary));
     border-radius: 50%;
     width: 40px;
     height: 40px;
     top: 50%;
     transform: translateY(-50%);
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    font-size: 22px;
 }
 
-.carousel-control-custom:hover {
+.carousel-control-prev-reviews:hover,
+.carousel-control-next-reviews:hover {
     transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-control-prev-reviews {
+    left: 250px;
+}
+
+.carousel-control-next-reviews {
+    right: 250px;
+}
+
+.carousel-control-prev-product,
+.carousel-control-next-product {
+    background-color: rgb(var(--color-primary));
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    font-size: 18px;
+}
+
+.carousel-control-prev-product:hover,
+.carousel-control-next-product:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-control-prev-product {
+    left: 1%;
+}
+
+.carousel-control-next-product {
+    right: 1%;
 }
 
 .fixed-sidebar {

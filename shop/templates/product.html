@@ -19,13 +19,13 @@
 
                 <!-- Carousel navigation buttons -->
                 {% if product.images.count > 1 %}
-                    <button class="carousel-control-prev" type="button"
+                    <button class="carousel-control-prev carousel-control-prev-product" type="button"
                             data-bs-target="#carouselProduct{{ product.id }}" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
+                        <i class="bi bi-chevron-left"></i>
                     </button>
-                    <button class="carousel-control-next" type="button"
+                    <button class="carousel-control-next carousel-control-next-product" type="button"
                             data-bs-target="#carouselProduct{{ product.id }}" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
+                        <i class="bi bi-chevron-right"></i>
                     </button>
                 {% endif %}
             </div>
