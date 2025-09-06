@@ -15,8 +15,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
-                                    <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}" style="text-decoration: none;">
-                                        <span style="color: white">- {{ review.product.name }}</span>
+                                    <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}">
+                                        <span class="review-product-link">- {{ review.product.name }}</span>
                                     </a>
                                 </h5>
                                 <h6 class="card-subtitle mb-2" style="color: white">Rating:
