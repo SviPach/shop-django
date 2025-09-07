@@ -11,15 +11,16 @@
             {% for review in reviews %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <div class="d-flex justify-content-center my-4">
-                        <div class="card card-review" style="width: 40rem;">
+                        <div class="card card-review">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
+                                    <span class="text-unique">{{ review.user.first_name }} {{ review.user.last_name }}</span>
+                                    <span style="color: white">- </span>
                                     <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}">
-                                        <span class="review-product-link">- {{ review.product.name }}</span>
+                                        <span class="review-product-link text-link">{{ review.product.name }}</span>
                                     </a>
                                 </h5>
-                                <h6 class="card-subtitle mb-2" style="color: white">Rating:
+                                <h6 class="card-subtitle mb-2 text-secondary">Rating:
                                     {% for i in review.stars_gold %}
                                         <span style="color: gold;">&#9733;</span>
                                     {% endfor %}
@@ -27,7 +28,7 @@
                                         <span style="color: gray;">&#9733;</span>
                                     {% endfor %}
                                 </h6>
-                                <p class="card-text" style="color: black">{{ review.comment }}</p>
+                                <p class="card-text text-tertiary">{{ review.comment }}</p>
                             </div>
                         </div>
                     </div>
@@ -54,18 +55,18 @@
                     <img src="{{ product.images.first.image.url }}" class="card-img-top img-fluid" alt="...">
 
                     <div class="card-body">
-                        <h5 class="card-title" style="color: black">{{ product.name }}</h5>
-                        <p class="card-text" style="color: white">{{ product.summary }}</p>
+                        <h5 class="card-title text-main">{{ product.name }}</h5>
+                        <p class="card-text text-tertiary">{{ product.summary }}</p>
                     </div>
 
                     <div class="extra-info">
                         <p>
-                            <span style="color: black">Price: </span>
-                            <span>${{ product.price|truncatechars:100 }}</span>
+                            <span class="text-unique">Price: </span>
+                            <span class="text-tertiary">${{ product.price|truncatechars:100 }}</span>
                         </p>
                         <p>
-                            <span style="color: black">Quantity: </span>
-                            <span>{{ product.quantity|truncatechars:100 }}pc</span>
+                            <span class="text-unique">Quantity: </span>
+                            <span class="text-tertiary">{{ product.quantity|truncatechars:100 }}pc</span>
                         </p>
                     </div>
                 </a>

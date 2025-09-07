@@ -32,17 +32,17 @@
 
             <!-- Product's info -->
             <div class="card-body">
-                <h5 class="card-title" style="color: black; margin-top: -5px">{{ product.name }}</h5>
-                <p class="card-text" style="color: white">{{ product.summary }}</p>
+                <h5 class="card-title text-main" style="margin-top: -5px">{{ product.name }}</h5>
+                <p class="card-text text-tertiary">{{ product.summary }}</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item list-group-item-static">
-                    <span style="color: black;">Price: </span>
-                    <span style="color: white;">${{ product.price }}</span>
+                    <span class="text-secondary">Price: </span>
+                    <span class="text-secondary">${{ product.price }}</span>
                 </li>
                 <li class="list-group-item list-group-item-static">
-                    <span style="color: black;">Quantity: </span>
-                    <span style="color: white;">{{ product.quantity }}pc</span>
+                    <span class="text-secondary">Quantity: </span>
+                    <span class="text-secondary">{{ product.quantity }}pc</span>
                 </li>
             </ul>
             <div class="card-body">
@@ -60,12 +60,13 @@
                 <div class="card card-review-static col">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <span style="color: black;">{{ review.user.first_name }} {{ review.user.last_name }}</span>
+                            <span class="text-unique">{{ review.user.first_name }} {{ review.user.last_name }}</span>
+                            <span style="color: white">- </span>
                             <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}">
-                                <span class="review-product-link">- {{ review.product.name }}</span>
+                                <span class="review-product-link text-link">{{ review.product.name }}</span>
                             </a>
                         </h5>
-                        <h6 class="card-subtitle mb-2" style="color: white">Rating:
+                        <h6 class="card-subtitle mb-2 text-secondary">Rating:
                             {% for i in review.stars_gold %}
                                 <span style="color: gold;">&#9733;</span>
                             {% endfor %}
@@ -73,7 +74,7 @@
                                 <span style="color: gray;">&#9733;</span>
                             {% endfor %}
                         </h6>
-                        <p class="card-text" style="color: black">{{ review.comment }}</p>
+                        <p class="card-text text-tertiary">{{ review.comment }}</p>
                     </div>
                 </div>
             {% endfor %}
