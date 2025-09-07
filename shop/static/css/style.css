@@ -104,7 +104,9 @@ body {
     }
 
     .card-review-static {
-        height: 100%;
+        height: auto;
+        width: 600px;
+        margin-top: 20px;
     }
 
 
