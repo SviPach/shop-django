@@ -35,3 +35,6 @@ def privacy(request):
 
 def terms(request):
     return render(request, 'terms.html')
+
+def pricing(request):
+    return render(request, 'pricing.html')
