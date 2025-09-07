@@ -1,0 +1,37 @@
+<div class="row row-cols-1 row-cols-md-4 g-4">
+
+    {% for product in products %}
+        <div class="col">
+            <a class="card card-product" href="/category/{{ product.category.slug }}/{{ product.slug }}">
+
+                <img src="{{ product.images.first.image.url }}" class="card-img-top img-fluid" alt="...">
+
+                <div class="card-body">
+                    <h5 class="card-title text-main">{{ product.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-secondary">Rating:
+                        {% for i in product.average_rating_gold %}
+                            <span style="color: gold;">&#9733;</span>
+                        {% endfor %}
+                        {% for i in product.average_rating_gray %}
+                            <span style="color: gray;">&#9733;</span>
+                        {% endfor %}
+                        <span style="color: lightgray; font-size: 14px">({{ product.amount_of_ratings }})</span>
+                    </h6>
+                    <p class="card-text text-tertiary">{{ product.summary }}</p>
+                </div>
+
+                <div class="extra-info">
+                    <p>
+                        <span class="text-unique">Price: </span>
+                        <span class="text-tertiary">${{ product.price|truncatechars:100 }}</span>
+                    </p>
+                    <p>
+                        <span class="text-unique">Quantity: </span>
+                        <span class="text-tertiary">{{ product.quantity|truncatechars:100 }}pc</span>
+                    </p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+
+</div>
