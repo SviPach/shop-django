@@ -87,6 +87,15 @@ body {
         padding: 20px 20px 35px 20px;
     }
 
+    .card-info h2{
+        color: white;
+        font-style: italic;
+    }
+
+    .card-info p {
+        color: whitesmoke;
+    }
+
     /*     card-card-review, card-review-static     */
     .card-review,
     .card-review-static {
