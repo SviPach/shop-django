@@ -80,6 +80,7 @@ body {
 }
 
 .card-info {
+    color: whitesmoke;
     background-color: rgba(var(--color-primary), 0.85);
     overflow: hidden;
     width: auto;
@@ -87,6 +88,7 @@ body {
 }
 
 .card-info h2 {
+    color: white;
     font-style: italic;
 }
 
