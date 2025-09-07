@@ -12,21 +12,26 @@ def product(request, slug_category, slug_product):
     reviews = Review.objects.filter(product=product)
     return render(request, 'product.html', {'product': product, 'reviews': reviews})
 
+
 def index(request):
     products = Product.objects.all()
     reviews = Review.objects.all()
     return render(request, 'index.html', {'products': products, 'reviews': reviews})
+
 
 def category(request, category_slug):
     category = Category.objects.get(slug=category_slug)
     products = Product.objects.filter(category=category)
     return render(request, 'category.html', {'products': products})
 
+
 def about(request):
     return render(request, 'about.html')
 
+
 def privacy(request):
     return render(request, 'privacy.html')
+
 
 def terms(request):
     return render(request, 'terms.html')
