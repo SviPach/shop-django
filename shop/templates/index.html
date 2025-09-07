@@ -56,6 +56,14 @@
 
                     <div class="card-body">
                         <h5 class="card-title text-main">{{ product.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-secondary">Rating:
+                            {% for i in product.average_rating_gold %}
+                                <span style="color: gold;">&#9733;</span>
+                            {% endfor %}
+                            {% for i in product.average_rating_gray %}
+                                <span style="color: gray;">&#9733;</span>
+                            {% endfor %}
+                        </h6>
                         <p class="card-text text-tertiary">{{ product.summary }}</p>
                     </div>
 

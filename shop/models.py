@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -19,6 +20,7 @@ class Product(models.Model):
     price = models.FloatField()
     quantity = models.IntegerField()
     summary = models.CharField(max_length=300)
+
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -29,6 +31,19 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[self.slug])
+
+    @property
+    def average_rating(self):
+        result = self.reviews.aggregate(avg_rating=Avg('rating'))
+        return result['avg_rating'] or 0
+
+    @property
+    def average_rating_gold(self):
+        return range(round(self.average_rating))
+
+    @property
+    def average_rating_gray(self):
+        return range(5 - round(self.average_rating))
 
 
 class Review(models.Model):
