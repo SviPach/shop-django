@@ -358,7 +358,7 @@ body {
 }
 
 .footer a:hover span{
-    color: rgb(var(--color-secondary));
+    color: rgb(var(--color-secondary)) !important;
     transform: scale(1.05);
 }
 

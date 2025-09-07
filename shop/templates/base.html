@@ -59,33 +59,9 @@
 
 
 <!-- Category sidebar -->
-<div id="sidebarCatalog" class="fixed-sidebar">
-    <h5 class="text-main">Our catalog:</h5>
-    <div class="list-group">
-        <a href="/category/fruits" class="list-group-item text-tertiary">
-            <span>Fruits</span>
-        </a>
-        <a href="/category/vegetables" class="list-group-item text-tertiary">
-            <span>Vegetables</span>
-        </a>
-        <a href="/category/dairy-eggs" class="list-group-item text-tertiary">
-            <span>Dairy & Eggs</span>
-        </a>
-        <a href="/category/meat-fish" class="list-group-item text-tertiary">
-            <span>Meat and Fish</span>
-        </a>
-        <a href="/category/exotic" class="list-group-item text-tertiary">
-            <span>Exotic</span>
-        </a>
-    </div>
-
-    <div class="d-flex justify-content-center btn-fixed-sidebar-hide">
-        <button id="sidebarHide" class="btn">
-            <i class="bi bi-chevron-double-left"></i>
-        </button>
-    </div>
-
-</div>
+<nav>
+    {% include 'base-catalog.html' %}
+</nav>>
 
 
 <!-- Category sidebar button -->
