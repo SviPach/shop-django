@@ -63,6 +63,7 @@
                             {% for i in product.average_rating_gray %}
                                 <span style="color: gray;">&#9733;</span>
                             {% endfor %}
+                            <span style="color: lightgray; font-size: 14px">({{ product.amount_of_ratings }})</span>
                         </h6>
                         <p class="card-text text-tertiary">{{ product.summary }}</p>
                     </div>

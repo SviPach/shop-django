@@ -45,6 +45,10 @@ class Product(models.Model):
     def average_rating_gray(self):
         return range(5 - round(self.average_rating))
 
+    @property
+    def amount_of_ratings(self):
+        return self.reviews.count()
+
 
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
