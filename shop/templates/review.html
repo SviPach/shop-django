@@ -1,0 +1,18 @@
+<div class="card-body">
+    <h5 class="card-title">
+        <span class="text-unique">{{ review.user.first_name }} {{ review.user.last_name }}</span>
+        <span style="color: white">- </span>
+        <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}">
+            <span class="review-product-link text-link">{{ review.product.name }}</span>
+        </a>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-secondary">Rating:
+        {% for i in review.stars_gold %}
+            <span style="color: gold;">&#9733;</span>
+        {% endfor %}
+        {% for i in review.stars_gray %}
+            <span style="color: gray;">&#9733;</span>
+        {% endfor %}
+    </h6>
+    <p class="card-text text-tertiary">{{ review.comment }}</p>
+</div>
