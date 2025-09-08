@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import render, get_object_or_404, redirect
 from shop.models import Product, Review, Category
 
 
@@ -38,3 +40,21 @@ def terms(request):
 
 def pricing(request):
     return render(request, 'pricing.html')
+
+def account(request):
+    if request.user.is_authenticated:
+        return render(request, 'account/account_overview.html')
+    else:
+        if request.method == 'POST':
+            form = AuthenticationForm(request, data=request.POST)
+            if form.is_valid():
+                username = form.cleaned_data.get('username')
+                password = form.cleaned_data.get('password')
+                user = authenticate(request, username=username, password=password)
+                if user is not None:
+                    login(request, user)
+                    return redirect('account')
+        else:
+            form = AuthenticationForm()
+
+        return render(request, 'account/account_overview.html', {'form': form})

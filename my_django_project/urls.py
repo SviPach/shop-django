@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from shop import views as shop_views
 
 urlpatterns = [
@@ -29,5 +29,7 @@ urlpatterns = [
                   path('about/', shop_views.about),
                   path('privacy/', shop_views.privacy),
                   path('terms/', shop_views.terms),
-                  path('pricing/', shop_views.pricing)
+                  path('pricing/', shop_views.pricing),
+                  path('account/', shop_views.account, name='account'),
+                  path('account/', include('django.contrib.auth.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
