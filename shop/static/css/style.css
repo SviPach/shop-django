@@ -54,6 +54,7 @@ body {
     /*     card-product     */
     .card-product {
         text-decoration: none;
+        backdrop-filter: blur(2px);
         background-color: rgba(var(--color-primary), 0.7);
         transition: transform 0.4s ease, background-color 0.4s ease;
         overflow: hidden;
