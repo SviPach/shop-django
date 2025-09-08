@@ -4,7 +4,30 @@
         <div class="col">
             <a class="card card-product" href="/category/{{ product.category.slug }}/{{ product.slug }}">
 
-                <img src="{{ product.images.first.image.url }}" class="card-img-top img-fluid" alt="...">
+                <div id="carouselProduct{{ product.id }}" class="carousel slide">
+                    <div class="carousel-inner card-img-top">
+                        {% for image in product.images.all %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <img src="{{ image.image.url }}" class="d-block w-100 h-100 round-top"
+                                     alt="{{ product.name }}">
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Carousel navigation buttons -->
+                    {% if product.images.count > 1 %}
+                        <button class="carousel-control-prev carousel-control-prev-product-preview extra-info" type="button"
+                                data-bs-target="#carouselProduct{{ product.id }}" data-bs-slide="prev">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="carousel-control-next carousel-control-next-product-preview extra-info" type="button"
+                                data-bs-target="#carouselProduct{{ product.id }}" data-bs-slide="next">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    {% endif %}
+                </div>
+
+{#                <img src="{{ product.images.first.image.url }}" class="card-img-top img-fluid" alt="...">#}
 
                 <div class="card-body">
                     <h5 class="card-title text-main">{{ product.name }}</h5>
