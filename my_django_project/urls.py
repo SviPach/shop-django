@@ -33,6 +33,7 @@ urlpatterns = [
                   path('account/', shop_views.account, name='account'),
                   path('account/cart/', shop_views.cart_detail, name='cart'),
                   path('account/cart/add/<int:product_id>', shop_views.add_to_cart, name='add_to_cart'),
-                  path('cart/clear/', shop_views.cart_clear, name='cart_clear'),
+                  path('account/cart/remove/<int:product_id>', shop_views.remove_from_cart, name='remove_from_cart'),
+                  path('cart/clear/', shop_views.clear_cart, name='clear_cart'),
                   path('account/', include('django.contrib.auth.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

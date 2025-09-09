@@ -14,7 +14,14 @@
             <ul class="list-group list-group-flush">
                 {% for item in user.cart.items.all %}
                 <li class="list-group-item list-group-item-static">
-                    <span class="text-secondary">{{ item.product.name }} - {{ item.quantity }}pc - ${{ item.total_price }}</span>
+                    <span class="d-flex align-items-center text-secondary">
+                        {{ item.product.name }} - {{ item.quantity }}pc - ${{ item.total_price }}
+                        <a href="/account/cart/remove/{{ item.product.id }}" class="btn text-secondary ms-auto"
+                            style="border: none; box-shadow: none; font-size: 16px;">
+                            <i class="bi bi-trash3"></i>
+                        </a>
+                    </span>
+
                 </li>
                 {% endfor %}
             </ul>
@@ -24,9 +31,9 @@
                 </h6>
             </div>
             <div class="card-body">
-                <form method="post" action="{% url 'cart_clear' %}">
+                <form method="post" action="{% url 'clear_cart' %}">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-warning">Remove all</button>
+                    <button type="submit" class="btn btn-warning text-secondary">Remove all</button>
                 </form>
             </div>
         </div>

@@ -110,6 +110,10 @@ class Cart(models.Model):
         item.save()
         return item
 
+    def remove_product(self, product):
+        """Remove a product"""
+        CartItem.objects.filter(cart=self, product=product).delete()
+
     def clear(self):
         """Clear the cart"""
         self.items.all().delete()

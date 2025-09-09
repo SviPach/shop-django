@@ -72,7 +72,13 @@ def add_to_cart(request, product_id):
     cart.add_product(product)
     return redirect(f"/category/{product.category.slug}/{product.slug}")
 
-def cart_clear(request):
+def remove_from_cart(request, product_id):
+    product = Product.objects.get(pk=product_id)
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    cart.remove_product(product)
+    return redirect('cart')
+
+def clear_cart(request):
     if request.method == "POST":
         cart = Cart.objects.get(user=request.user)
         cart.clear()
