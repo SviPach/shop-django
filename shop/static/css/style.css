@@ -51,8 +51,8 @@ body {
 
 /*          Cards          */
 
-    /*     card-product     */
-    .card-product {
+    /*     card-product-preview     */
+    .card-product-preview {
         text-decoration: none;
         background-color: rgba(var(--color-primary), 0.7);
         backdrop-filter: blur(2px);
@@ -63,22 +63,27 @@ body {
         will-change: transform;
     }
 
-    .card-product:hover {
+    .card-product-preview:hover {
         background-color: rgba(var(--color-primary), 0.95);
         transform: scale(1.02);
     }
 
-    .card-product img {
-        max-width: 400px;
-        max-height: 250px;
+    .card-product-preview img {
+        max-height: 190px;
         object-fit: cover;
     }
 
+    /*     card-product-overview     */
     .card-product-overview {
         background-color: rgba(var(--color-primary), 0.95);
         backdrop-filter: blur(2px);
         width: 500px;
         overflow: hidden;
+    }
+
+    .card-product-overview img {
+        max-height: 300px;
+        object-fit: cover;
     }
 
     /*     card-info     */
@@ -126,7 +131,7 @@ body {
     margin-left: 15px;
 }
 
-.card-product:hover .extra-info {
+.card-product-preview:hover .extra-info {
     max-height: 400px;
     opacity: 1;
 }
@@ -169,7 +174,7 @@ body {
         backdrop-filter: blur(2px);
         border-color: white;
         box-shadow: none;
-        transition: transform 0.4s ease, background-color 0.4s ease;
+        transition: transform 0.4s ease, background-color 0.4s ease !important;
         will-change: transform;
     }
 
@@ -340,7 +345,7 @@ body {
     .carousel-control-next-product,
     .carousel-control-prev-product-preview,
     .carousel-control-next-product-preview {
-        background-color: rgb(var(--color-primary));
+        background-color: rgba(var(--color-primary), 1);
         border-radius: 50%;
         width: 35px;
         height: 35px;
@@ -352,7 +357,9 @@ body {
     }
 
     .carousel-control-prev-product:hover,
-    .carousel-control-next-product:hover {
+    .carousel-control-next-product:hover,
+    .carousel-control-prev-product-preview:hover,
+    .carousel-control-next-product-preview:hover {
         transform: translateY(-50%) scale(1.05);
     }
 
@@ -368,9 +375,18 @@ body {
 
     .carousel-control-prev-product-preview,
     .carousel-control-next-product-preview {
+        background-color: rgba(var(--color-primary), 0);
+        color: transparent;
         font-size: 14px;
         width: 28px;
         height: 28px;
+        transition: color 0.5s ease, background-color 0.5s ease, transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .card-product-preview:hover .carousel-control-prev-product-preview,
+    .card-product-preview:hover .carousel-control-next-product-preview {
+        background-color: rgba(var(--color-primary), 1);
+        color: white;
     }
 
 

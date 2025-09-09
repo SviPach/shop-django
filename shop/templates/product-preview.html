@@ -2,7 +2,7 @@
 
     {% for product in products %}
         <div class="col">
-            <a class="card card-product" href="/category/{{ product.category.slug }}/{{ product.slug }}">
+            <a class="card card-product-preview" href="/category/{{ product.category.slug }}/{{ product.slug }}">
 
                 <div id="carouselProduct{{ product.id }}" class="carousel slide">
                     <div class="carousel-inner card-img-top">
@@ -16,11 +16,11 @@
 
                     <!-- Carousel navigation buttons -->
                     {% if product.images.count > 1 %}
-                        <button class="carousel-control-prev carousel-control-prev-product-preview extra-info" type="button"
+                        <button class="carousel-control-prev carousel-control-prev-product-preview" type="button"
                                 data-bs-target="#carouselProduct{{ product.id }}" data-bs-slide="prev">
                             <i class="bi bi-chevron-left"></i>
                         </button>
-                        <button class="carousel-control-next carousel-control-next-product-preview extra-info" type="button"
+                        <button class="carousel-control-next carousel-control-next-product-preview" type="button"
                                 data-bs-target="#carouselProduct{{ product.id }}" data-bs-slide="next">
                             <i class="bi bi-chevron-right"></i>
                         </button>
