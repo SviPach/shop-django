@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+
+    <div style="padding-top: 3rem;">
+
+
+        <div class="card card-product-overview mx-auto">
+            <div class="card-body">
+                <h5 class="card-title text-main">Your shopping cart:</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for item in user.cart.items.all %}
+                <li class="list-group-item list-group-item-static">
+                    <span class="text-secondary">{{ item.product.name }} - {{ item.quantity }}pc - ${{ item.total_price }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-secondary">Total price:
+                    <span class="text-unique">{{ cart.total_price }}</span>
+                </h6>
+            </div>
+            <div class="card-body">
+                <form method="post" action="{% url 'cart_clear' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-warning">Remove all</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

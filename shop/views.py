@@ -1,7 +1,8 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from shop.models import Product, Review, Category
+from shop.models import Product, Review, Category, Cart
 
 
 # Create your views here.
@@ -43,7 +44,7 @@ def pricing(request):
 
 def account(request):
     if request.user.is_authenticated:
-        return render(request, 'account/account_overview.html')
+        return render(request, 'account/account-overview.html')
 
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -58,3 +59,22 @@ def account(request):
         form = AuthenticationForm()
 
     return render(request, 'account/login.html', {'form': form})
+
+@login_required(login_url='account')
+def cart_detail(request):
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    return render(request, "account/cart.html", {"cart": cart})
+
+@login_required(login_url='account')
+def add_to_cart(request, product_id):
+    product = Product.objects.get(pk=product_id)
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    cart.add_product(product)
+    return redirect(f"/category/{product.category.slug}/{product.slug}")
+
+def cart_clear(request):
+    if request.method == "POST":
+        cart = Cart.objects.get(user=request.user)
+        cart.clear()
+    return redirect('cart')
+

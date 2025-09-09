@@ -4,7 +4,6 @@
     {% load static %}
 
     {% load django_bootstrap5 %}
-    {% load widget_tweaks %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 
@@ -72,9 +71,12 @@
 
 
 <!-- Shopping cart button -->
-<button class="btn shopping-cart-button">
-    <i class="bi bi-basket2-fill"></i>
-</button>
+<a href="/account/cart">
+    <button class="btn shopping-cart-button">
+        <i class="bi bi-basket2-fill"></i>
+    </button>
+</a>
+
 
 
 <!-- Content -->
