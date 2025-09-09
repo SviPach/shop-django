@@ -61,6 +61,7 @@ body {
         position: relative;
         cursor: pointer;
         will-change: transform;
+        box-shadow: -4px 4px 8px rgba(0,0,0,0.2);
     }
 
     .card-product-preview:hover {
@@ -110,6 +111,7 @@ body {
         width: 40rem;
         background-color: rgba(var(--color-primary), 0.9);
         backdrop-filter: blur(2px);
+        box-shadow: -4px 4px 8px rgba(0,0,0,0.2);
     }
 
     .card-review-static {
@@ -125,7 +127,8 @@ body {
         transition: background-color 0.4s ease;
         width: 400px;
         padding: 24px;
-        color: white
+        color: white;
+        box-shadow: -4px 4px 8px rgba(0,0,0,0.2);
     }
 
     .card-login:hover {
@@ -201,9 +204,10 @@ body {
         background-color: rgba(var(--color-secondary), 1);
         backdrop-filter: blur(2px);
         border-color: white;
-        box-shadow: none;
+        box-shadow: -4px 4px 8px rgba(0,0,0,0.1);
         transition: transform 0.4s ease, background-color 0.4s ease;
         will-change: transform;
+
     }
 
     .btn:hover {
@@ -340,6 +344,11 @@ body {
 
 
 /*          Carousel          */
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        box-shadow: -4px 4px 8px rgba(0,0,0,0.1);
+    }
 
     /*     carousel-control-reviews     */
     .carousel-control-prev-reviews,
