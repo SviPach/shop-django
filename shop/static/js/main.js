@@ -27,3 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
         consentBanner.style.display = "none";
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    const toastList = toastElList.map(function(toastEl) {
+        return new bootstrap.Toast(toastEl, { delay: 4000 }).show()
+    })
+});
