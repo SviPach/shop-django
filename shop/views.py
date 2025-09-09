@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from shop.models import Product, Review, Category, Cart
 
 
@@ -71,6 +72,7 @@ def add_to_cart(request, product_id):
         product = Product.objects.get(pk=product_id)
         cart, created = Cart.objects.get_or_create(user=request.user)
         cart.add_product(product)
+        messages.success(request, f"{product.name} was added to your cart!")
     return redirect('product', slug_category=product.category.slug, slug_product=product.slug)
 
 def remove_from_cart(request, product_id):
@@ -78,11 +80,13 @@ def remove_from_cart(request, product_id):
         product = Product.objects.get(pk=product_id)
         cart, created = Cart.objects.get_or_create(user=request.user)
         cart.remove_product(product)
+        messages.success(request, f"{product.name} was removed from your cart!")
     return redirect('cart')
 
 def clear_cart(request):
     if request.method == "POST":
         cart = Cart.objects.get(user=request.user)
         cart.clear()
+        messages.success(request, f"Cart was cleared!")
     return redirect('cart')
 

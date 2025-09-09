@@ -4,6 +4,25 @@
 {% block content %}
 
 
+    {% if messages %}
+        <div class="position-fixed top-1 end-0 p-3" style="z-index:1002;">
+            {% for message in messages %}
+                <div class="toast align-items-center text-secondary bg-success border-0 show" role="alert"
+                     aria-live="assertive"
+                     aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            {{ message }}
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                                aria-label="Close">
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <div style="padding-top: 3rem;">
 
 
@@ -12,26 +31,31 @@
                 <h5 class="card-title text-main">Your shopping cart:</h5>
             </div>
             <ul class="list-group list-group-flush">
-                {% for item in user.cart.items.all %}
-                <li class="list-group-item list-group-item-static">
-                    <span class="d-flex align-items-center text-secondary">
-                        {{ item.product.name }} - {{ item.quantity }}pc - ${{ item.total_price }}
-                        <form method="post" action="{% url 'remove_from_cart' product_id=item.product.id %}">
-                            {% csrf_token %}
-                            <button class="btn text-secondary ms-auto" style="border: none; box-shadow: none; font-size: 16px;">
-                                <i class="bi bi-trash3"></i>
-                            </button>
-                        </form>
-                    </span>
-
-                </li>
-                {% endfor %}
+                {% if user.cart.items.all %}
+                    {% for item in user.cart.items.all %}
+                    <li class="list-group-item list-group-item-static">
+                        <span class="d-flex align-items-center text-secondary">
+                            {{ item.product.name }} - {{ item.quantity }}pc - ${{ item.total_price }}
+                            <form method="post" action="{% url 'remove_from_cart' product_id=item.product.id %}">
+                                {% csrf_token %}
+                                <button class="btn text-secondary ms-auto" style="border: none; box-shadow: none; font-size: 16px;">
+                                    <i class="bi bi-trash3"></i>
+                                </button>
+                            </form>
+                        </span>
+                    </li>
+                    {% endfor %}
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-secondary">Total price:
+                            <span class="text-unique">{{ cart.total_price }}</span>
+                        </h6>
+                    </div>
+                {% else %}
+                    <div class="card-body">
+                        <h5 class="card-title text-unique">No products!</h5>
+                    </div>
+                {% endif %}
             </ul>
-            <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-secondary">Total price:
-                    <span class="text-unique">{{ cart.total_price }}</span>
-                </h6>
-            </div>
             <div class="card-body">
                 <form method="post" action="{% url 'clear_cart' %}">
                     {% csrf_token %}
