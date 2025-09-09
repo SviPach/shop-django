@@ -56,9 +56,12 @@
                 </li>
             </ul>
             <div class="card-body">
-                <a href="/account/cart/add/{{ product.id }}" class="btn btn-primary">
-                    Add to cart
-                </a>
+                <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <button class="btn text-secondary">
+                        Add to cart
+                    </button>
+                </form>
             </div>
         </div>
 

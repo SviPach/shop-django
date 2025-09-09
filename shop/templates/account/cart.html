@@ -16,10 +16,12 @@
                 <li class="list-group-item list-group-item-static">
                     <span class="d-flex align-items-center text-secondary">
                         {{ item.product.name }} - {{ item.quantity }}pc - ${{ item.total_price }}
-                        <a href="/account/cart/remove/{{ item.product.id }}" class="btn text-secondary ms-auto"
-                            style="border: none; box-shadow: none; font-size: 16px;">
-                            <i class="bi bi-trash3"></i>
-                        </a>
+                        <form method="post" action="{% url 'remove_from_cart' product_id=item.product.id %}">
+                            {% csrf_token %}
+                            <button class="btn text-secondary ms-auto" style="border: none; box-shadow: none; font-size: 16px;">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                        </form>
                     </span>
 
                 </li>

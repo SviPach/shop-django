@@ -67,15 +67,17 @@ def cart_detail(request):
 
 @login_required(login_url='account')
 def add_to_cart(request, product_id):
-    product = Product.objects.get(pk=product_id)
-    cart, created = Cart.objects.get_or_create(user=request.user)
-    cart.add_product(product)
-    return redirect(f"/category/{product.category.slug}/{product.slug}")
+    if request.method == "POST":
+        product = Product.objects.get(pk=product_id)
+        cart, created = Cart.objects.get_or_create(user=request.user)
+        cart.add_product(product)
+    return redirect('product', slug_category=product.category.slug, slug_product=product.slug)
 
 def remove_from_cart(request, product_id):
-    product = Product.objects.get(pk=product_id)
-    cart, created = Cart.objects.get_or_create(user=request.user)
-    cart.remove_product(product)
+    if request.method == "POST":
+        product = Product.objects.get(pk=product_id)
+        cart, created = Cart.objects.get_or_create(user=request.user)
+        cart.remove_product(product)
     return redirect('cart')
 
 def clear_cart(request):
