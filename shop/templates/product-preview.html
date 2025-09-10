@@ -2,7 +2,7 @@
 
     {% for product in products %}
         <div class="col">
-            <a class="card card-product-preview" href="/category/{{ product.category.slug }}/{{ product.slug }}">
+            <a class="card card-product-preview" href="{% url 'product' product.category.slug product.slug %}">
 
                 <div id="carouselProduct{{ product.id }}" class="carousel slide">
                     <div class="carousel-inner card-img-top">

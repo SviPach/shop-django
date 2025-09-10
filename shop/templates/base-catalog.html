@@ -4,7 +4,7 @@
 
     <div class="list-group">
         {% for category in categories %}
-            <a href="/category/{{ category.slug }}" class="list-group-item text-tertiary">
+            <a href="{% url 'category' category.slug %}" class="list-group-item text-tertiary">
                 <span>{{ category.name }}</span>
             </a>
         {% endfor %}

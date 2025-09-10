@@ -34,12 +34,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-tertiary" href="/pricing/">
+                    <a class="nav-link text-tertiary" href="{% url 'pricing' %}">
                         Pricing
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-tertiary" href="/about/">
+                    <a class="nav-link text-tertiary" href="{% url 'about' %}">
                         About us
                     </a>
                 </li>
@@ -49,7 +49,7 @@
                 We are glad to see you here!
             </span>
 
-            <a href="/account/" class="btn btn-primary position-relative">
+            <a href="{% url 'account' %}" class="btn btn-primary position-relative">
                 <i class="bi bi-person"></i>
             </a>
         </div>
@@ -71,7 +71,7 @@
 
 
 <!-- Shopping cart button -->
-<a href="/account/cart">
+<a href="{% url 'cart' %}">
     <button class="btn shopping-cart-button">
         <i class="bi bi-basket2-fill"></i>
     </button>
@@ -100,12 +100,12 @@
             </a>
         </p>
         <div class="mt-2">
-            <a href="/privacy/">
+            <a href="{% url 'privacy' %}">
                 <span class="text-tertiary">
                     Privacy Policy
                 </span>
             </a>
-            <a href="/terms/">
+            <a href="{% url 'terms' %}">
                 <span class="text-tertiary">
                     Terms of Service
                 </span>

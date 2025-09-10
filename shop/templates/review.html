@@ -2,7 +2,7 @@
     <h5 class="card-title">
         <span class="text-unique">{{ review.user.first_name }} {{ review.user.last_name }}</span>
         <span style="color: white">- </span>
-        <a href="/category/{{ review.product.category.slug }}/{{ review.product.slug }}">
+        <a href="{% url 'product' review.product.category.slug review.product.slug %}">
             <span class="review-product-link text-link">{{ review.product.name }}</span>
         </a>
     </h5>
