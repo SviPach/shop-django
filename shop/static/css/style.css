@@ -149,6 +149,16 @@ body {
         transform: scale(1.05);
     }
 
+    /*     card-login     */
+    .card-account {
+        background-color: rgba(var(--color-primary), 0.95);
+        backdrop-filter: blur(2px);
+        width: 500px;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 
 /*     extra-info     */
 .extra-info {
