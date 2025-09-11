@@ -26,7 +26,7 @@ def index(request):
 def category(request, category_slug):
     category = Category.objects.get(slug=category_slug)
     products = Product.objects.filter(category=category)
-    return render(request, 'category.html', {'products': products})
+    return render(request, 'category.html', {'products': products, 'category': category})
 
 
 def about(request):
