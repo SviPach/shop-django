@@ -5,33 +5,33 @@
 
     <div style="padding-top: 3rem;">
 
-            <div class="card card-account">
-                <div class="card-body">
-                    <h5 class="card-title text-main">Account info:</h5>
-                    <h6 class="card-subtitle mb-2 text-secondary">Username:
-                        <span class="text-unique">{{ user.username }}</span>
-                    </h6>
-                    <h6 class="card-subtitle mb-2 text-secondary">E-mail:
-                        <span class="text-unique">{{ user.email }}</span>
-                    </h6>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-static">
-                        <span class="text-secondary">First name: </span>
-                        <span class="text-secondary">{{ user.first_name }}</span>
-                    </li>
-                    <li class="list-group-item list-group-item-static">
-                        <span class="text-secondary">Last name: </span>
-                        <span class="text-secondary">{{ user.last_name }}</span>
-                    </li>
-                </ul>
-                <div class="card-body">
-                    <form method="post" action="{% url 'logout' %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-danger">Logout</button>
-                    </form>
-                </div>
+        <div class="card card-account">
+            <div class="card-body">
+                <h5 class="card-title text-main">Account info:</h5>
+                <h6 class="card-subtitle mb-2 text-secondary">Username:
+                    <span class="text-unique">{{ user.username }}</span>
+                </h6>
+                <h6 class="card-subtitle mb-2 text-secondary">E-mail:
+                    <span class="text-unique">{{ user.email }}</span>
+                </h6>
             </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-static">
+                    <span class="text-secondary">First name: </span>
+                    <span class="text-secondary">{{ user.first_name }}</span>
+                </li>
+                <li class="list-group-item list-group-item-static">
+                    <span class="text-secondary">Last name: </span>
+                    <span class="text-secondary">{{ user.last_name }}</span>
+                </li>
+            </ul>
+            <div class="card-body">
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+            </div>
+        </div>
 
     </div>
 
