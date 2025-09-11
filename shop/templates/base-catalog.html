@@ -2,6 +2,7 @@
 
     <h5 class="text-main">Our catalog:</h5>
 
+    <!-- List of categories -->
     <div class="list-group">
         {% for category in categories %}
             <a href="{% url 'category' category.slug %}" class="list-group-item text-tertiary">
@@ -10,6 +11,7 @@
         {% endfor %}
     </div>
 
+    <!-- Collapse button -->
     <div class="d-flex justify-content-center btn-fixed-sidebar-hide">
         <button id="sidebarHide" class="btn">
             <i class="bi bi-chevron-double-left"></i>
